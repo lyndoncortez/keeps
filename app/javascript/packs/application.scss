@@ -1,0 +1,71 @@
+@import "~bootstrap/scss/bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap);
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+}
+
+.header-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 2.25rem;
+}
+
+.form-control.is-valid {
+  border: 1px solid #ced4da !important;
+  background-image: none;
+}
+
+.form-control.is-valid:focus {
+  box-shadow: none;
+}
+
+.alert {
+  color: red;
+  margin-bottom: 0;
+}
+
+.was-validated .form-check-input:valid ~ .form-check-label,
+.form-check-input.is-valid ~ .form-check-label {
+  color: black;
+}
+
+.hero-text {
+  border-right: 1px solid #fff;
+}
+
+.row {
+  padding-right: 1rem !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-create {
+  color: black;
+  font-weight: 500;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+  position: fixed;
+  bottom: 5%;
+  right: 10%;
+  z-index: 3;
+}
