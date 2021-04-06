@@ -28,27 +28,25 @@ class CategoriesController < ApplicationController
   def create
     @category = current_user.categories.build(category_params)
 
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: "Category was successfully created." }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    if @category.save
+      redirect_to @category, notice: "Category was successfully created."
+      render :show, status: :created, location: @category
+    else
+      flash.now[:messages] = @category.errors.full_messages[0]
+      render :show_form
     end
   end
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
-    respond_to do |format|
-      if @category.update(category_params)
-        format.html { redirect_to @category, notice: "Category was successfully updated." }
-        format.json { render :show, status: :ok, location: @category }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    @category = current_user.categories.find(params[:id])
+    @category.update(category_params)
+    if @category.save
+      redirect_to @category, notice: "Category was successfully updated."
+      render :show, status: :created, location: @category
+    else
+      flash.now[:messages] = @category.errors.full_messages[0]
+      render :show_form
     end
   end
 
@@ -69,6 +67,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:name, :description)
+      params.require(:category).permit(:title, :description)
     end
 end

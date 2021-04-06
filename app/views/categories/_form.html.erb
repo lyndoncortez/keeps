@@ -3,14 +3,14 @@
   <h1 class="text-dark">
     <%= @category.new_record? ? 'New Journal' : "Edit Journal" %>
   </h1>
-  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 
 <%= simple_form_for @category, remote: true do |f| %>
 <div class="modal-body">
-  <%= f.label :name, "Title", :class => "form-label text-dark" %>
+  <%= f.label :title, "Title", :class => "form-label text-dark" %>
   <div class="input-group mb-3">
-    <%= f.input_field :name, :class => "form-control" %>
+    <%= f.input_field :title, :class => "form-control" %>
   </div>
   <%= f.label :description, "Description", :class => "form-label text-dark" %>
   <div class="input-group mb-3">
