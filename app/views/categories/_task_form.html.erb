@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h1 class="text-dark">
+    <%= @task.new_record? ? 'New Task' : "Edit Task" %>
+  </h1>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<%= simple_form_for ([@task.category, @task]), remote: true do |f| %>
+<div class="modal-body">
+  <%= f.label :title, "Title", :class => "form-label text-dark" %>
+  <div class="input-group mb-3">
+    <%= f.input_field :title, :class => "form-control" %>
+  </div>
+  <%= f.label :description, "Note", :class => "form-label text-dark" %>
+  <div class="input-group mb-3">
+    <%= f.text_area :description, :class => "form-control" %>
+  </div>
+  <%= f.label :status, "Status", :class => "form-label text-dark" %>
+  <div class="mb-3">
+    <%= f.select :status, Task::STATUS_OPTIONS, {}, {required: 'true', autofocus: 'true', class: 'form-select'} %>
+  </div>
+  <%= f.label :deadline, "Deadline", :class => "form-label text-dark" %>
+  <div class="input-group mb-3">
+    <%= f.text_field :deadline, :class => "form-control",
+      data: {
+        controller: "flatpickr",
+        flatpickr_alt_format: t("date.formats.long"),
+        flatpickr_min_date: Time.zone.now,
+        flatpickr_alt_input: true
+      } %>
+  </div>
+  <% if flash[:messages] %>
+    <p class = "text-danger"><%= flash[:messages] %></p> <br>
+  <% end %>
+</div>
+<div class="modal-footer">
+  <%= f.submit "Save", :class => 'btn btn-primary' %>
+</div>
+<% end %>

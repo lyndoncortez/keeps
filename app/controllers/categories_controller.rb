@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.find(params[:id])
     @category.update(category_params)
     if @category.save
-      redirect_to @category, notice: "Category was successfully updated."
+      redirect_to @category, notice: "Category was successfully updated." and return
       render :show, status: :created, location: @category
     else
       flash.now[:messages] = @category.errors.full_messages[0]
