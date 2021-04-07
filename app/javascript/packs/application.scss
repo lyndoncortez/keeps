@@ -30,15 +30,11 @@ h5 {
 
 .was-validated .form-check-input:valid ~ .form-check-label,
 .form-check-input.is-valid ~ .form-check-label {
-  color: black;
+  color: white;
 }
 
 .hero-text {
   border-right: 1px solid #fff;
-}
-
-.row {
-  padding-right: 1rem !important;
 }
 
 a {
@@ -80,4 +76,12 @@ a {
 .back-btn {
   font-family: sans-serif;
   font-weight: 400;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
 }

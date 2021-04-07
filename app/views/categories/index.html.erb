@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+
+
+
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <h1 class="text-center">My Journal</h1>
 
@@ -8,6 +13,11 @@
       <div class="flex-grow-1">
         <h5 class="card-title"><%= category.title %></h5>
         <p class="card-text" style="transform: rotate(0);"><%= link_to category.description, category, :class => "text-white stretched-link" %></p>
+        <div>
+          <span class="text-light">
+            <small>Completed <%= category.tasks_completed %> out of <%= category.total_tasks %> tasks</small>
+          </span>
+      </div>
       </div>
       <div class="p-2 text-center">
         <div class="dropdown text-end">

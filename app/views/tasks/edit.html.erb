@@ -1,6 +1,11 @@
-<h1>Editing task</h1>
+<div class="w-50 mx-auto">
+  <%= link_to @category, :class => "text-white" do %>
+    <i class="fas fa-chevron-left text-secondary"><span class="back-btn"> Back</span></i>
+  <% end %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', [@task.category, @task] %> |
-<%= link_to 'Back', category_tasks_path(@task.category) %>
+<div class="card border-secondary text-dark w-50 mx-auto mt-3">
+  <div class="card-body">
+    <%= render 'form' %>
+  </div>
+</div>

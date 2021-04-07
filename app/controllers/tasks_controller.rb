@@ -28,15 +28,17 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to(@task.category, notice: 'Task was successfully created.')
     else
+      flash.now[:messages] = @task.errors.full_messages[0]
       render action: 'new'
     end
   end
 
   # PUT categories/1/tasks/1
   def update
-    if @task.update_attributes(task_params)
+    if @task.update(task_params)
       redirect_to(@task.category, notice: 'Task was successfully updated.')
     else
+      flash.now[:messages] = @task.errors.full_messages[0]
       render action: 'edit'
     end
   end
@@ -60,6 +62,6 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:title, :description, :status, :category_id)
+      params.require(:task).permit(:title, :description, :status, :category_id, :deadline)
     end
 end
