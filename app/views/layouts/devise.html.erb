@@ -12,19 +12,9 @@
   </head>
 
   <body class="d-flex h-100 text-white bg-dark">
-    <% flash.each do |type, msg| %>
-      <div class="alert alert-info alert-dismissible fade show mt-4 alert-fixed" role="alert">
-        <%= msg %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    <% end %>
     <div class="container">
       <%= render 'layouts/header' %>
-      <% if user_signed_in? %>  
-        <%= yield %>
-      <% else %>
-        <%= render 'layouts/hero' %>
-      <% end %>
+      <%= yield %>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   </body>

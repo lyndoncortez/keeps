@@ -35,7 +35,8 @@ class TasksController < ApplicationController
 
   # PUT categories/1/tasks/1
   def update
-    if @task.update(task_params)
+    @task.update(task_params)
+    if @task.save
       redirect_to(@task.category, notice: 'Task was successfully updated.')
     else
       flash.now[:messages] = @task.errors.full_messages[0]
@@ -45,6 +46,7 @@ class TasksController < ApplicationController
 
   # DELETE categories/1/tasks/1
   def destroy
+    @task = @category.tasks.find(params[:id])
     @task.destroy
 
     redirect_to @category

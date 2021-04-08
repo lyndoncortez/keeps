@@ -1,10 +1,11 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   before_action :set_category, only: %i[ show edit update destroy ]
 
   # GET /categories or /categories.json
   def index
-    @categories = current_user.categories
+    # @categories = current_user.categories
+    @categories = Category.accessible_by(current_ability).all
   end
 
   # GET /categories/1 or /categories/1.json
@@ -29,7 +30,7 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.build(category_params)
 
     if @category.save
-      redirect_to @category, notice: "Category was successfully created."
+      redirect_to(@category, notice: "Journal was successfully created.") and return
       render :show, status: :created, location: @category
     else
       flash.now[:messages] = @category.errors.full_messages[0]
@@ -42,7 +43,7 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.find(params[:id])
     @category.update(category_params)
     if @category.save
-      redirect_to @category, notice: "Category was successfully updated." and return
+      redirect_to(root_path, notice: "Journal was successfully updated.") and return
       render :show, status: :created, location: @category
     else
       flash.now[:messages] = @category.errors.full_messages[0]
@@ -52,9 +53,10 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1 or /categories/1.json
   def destroy
+    @category = Category.find(params[:id])
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
+      format.html { redirect_to categories_url, notice: "Journal was successfully deleted." }
       format.json { head :no_content }
     end
   end

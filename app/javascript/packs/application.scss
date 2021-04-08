@@ -24,7 +24,6 @@ h5 {
 }
 
 .alert {
-  color: red;
   margin-bottom: 0;
 }
 
@@ -84,4 +83,10 @@ a {
 
 .modal-footer {
   border-top: none;
+}
+
+.alert-fixed {
+  position: fixed;
+  right: 42%;
+  z-index: 9999;
 }

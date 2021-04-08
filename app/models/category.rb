@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
   belongs_to :user
 
   validates :title, presence: true
@@ -10,5 +10,9 @@ class Category < ApplicationRecord
 
   def total_tasks
     tasks.count
+  end
+
+  def total_journal
+    category.count
   end
 end

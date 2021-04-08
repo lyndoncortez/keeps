@@ -1,6 +1,6 @@
-<header class="pt-3 pb-2 mb-3 border-bottom w-75 mx-auto">
+<header class="pt-3 pb-2 mb-5 border-bottom border-secondary w-75 mx-auto">
   <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
-    <h2 class="text-white">Keeps</h2>
+    <h2 class="text-white"><%= link_to "Keeps", "/" %></h2>
 
     <div class="d-flex align-items-center">
       <div class="w-100 me-3"></div>
@@ -18,9 +18,7 @@
         </div>
       <% else %>
         <div class="w-100 text-end">
-          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-              <%= link_to "Sign up", new_registration_path(resource_name), class: 'btn btn-sm btn-warning' %>
-          <% end %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-sm btn-warning' %>
         </div>
       <% end %>
       </div>
