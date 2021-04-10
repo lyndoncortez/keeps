@@ -1,6 +1,6 @@
 # Keeps
 
-💾 You can preview it here: [Keeps](https://keeps-journal.herokuapp.com/)
+💾 You can preview it here: [Keeps Journal App](https://keeps-journal.herokuapp.com/)
 
 Ruby on Rails Project using Devise for authentication and Bootstrap for styling
 <br>
