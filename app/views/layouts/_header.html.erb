@@ -1,6 +1,6 @@
-<header class="pt-3 pb-2 mb-5 border-bottom border-secondary w-75 mx-auto">
+<header class="pt-3 pb-2 mb-5 border-bottom border-dark w-75 mx-auto">
   <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
-    <h2 class="text-white"><%= link_to "Keeps", "/" %></h2>
+    <h2><%= link_to "Keeps", "/", class: "text-warning" %></h2>
 
     <div class="d-flex align-items-center">
       <div class="w-100 me-3"></div>
@@ -11,7 +11,7 @@
           </a>
           <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser">
             <li><%= link_to 'New Journal', new_category_path, :class => 'dropdown-item', "data-bs-toggle" => "modal", "data-bs-target" => "#exampleModal", :remote => true %></li>
-            <li><%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
           </ul>
