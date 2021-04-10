@@ -87,6 +87,15 @@ a {
 
 .alert-fixed {
   position: fixed;
-  right: 42%;
+  right: 39%;
   z-index: 9999;
+}
+
+.input_file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }

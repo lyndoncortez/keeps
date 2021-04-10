@@ -1,11 +1,25 @@
 <div class="form-signin p-5">
-  <h2 class ="mb-3 fw-normal text-center">Edit Profile</h2>
+  <h2 class ="mb-5 fw-normal text-center">Edit Profile</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
 
   <div class="form-inputs">
+
+    <div class="mb-3 d-flex justify-content-center">
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, class: "rounded-circle", width: "100", height: "100" %>
+      <% else %>
+        <%= image_tag("default_profile.jpg", class: "rounded-circle", height: '100', width: '100') %>
+      <% end %>
+    </div>
+
+    <div class="mb-3 d-flex justify-content-center">
+       <%= f.label :avatar, "Choose a file", class: "btn btn-sm border-secondary text-white" %>
+      <%= f.file_field :avatar, class: "input_file" %> </div>
+    </div>
+
     <div class="mb-3 d-flex justify-content-center">
       <%= f.email_field :email, 
                         autofocus: true, 
@@ -39,7 +53,7 @@
     </div>
 
     <div class="d-flex justify-content-center">
-      <%= f.submit "Update" %>
+      <%= f.submit "Update", class: "btn btn-sm btn-primary" %>
     </div>
 <% end %>
 
@@ -50,5 +64,5 @@
     <p>Unhappy?</p> 
   </div>
   <div class="mb-3 d-flex justify-content-center">
-    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-danger" %></p>
   </div>
