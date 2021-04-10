@@ -6,7 +6,9 @@
     <div class="card-body text-secondary">
       <img src=<%=asset_path("empty.svg")%>/>
       <h5 class="card-title">Dude, you don't have any Journal!</h5>
-      <h6 class="card-text">Look for this <span> <i class="fas fa-pencil-alt text-secondary"></i> </span> button and write one.</h6>
+      <h6 class="card-text"><%= link_to new_category_path, "data-bs-toggle" => "modal", "data-bs-target" => "#exampleModal", :remote => true do %>
+        <i class="fas fa-plus text-primary"></i> Create one.
+      <% end %></h6>
     </div>
   </div>
 <% else %>
@@ -19,7 +21,7 @@
           <p class="card-text" style="transform: rotate(0);"><%= link_to category.description, category, :class => "text-white stretched-link" %></p>
           <div>
             <span class="text-light">
-              <small>Completed <%= category.tasks_completed %> out of <%= category.total_tasks %> tasks</small>
+              <small>Completed <%= category.tasks_completed %> out of <%= category.tasks.count %> tasks</small>
             </span>
           </div>
         </div>

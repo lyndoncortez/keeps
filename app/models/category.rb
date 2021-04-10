@@ -7,12 +7,4 @@ class Category < ApplicationRecord
   def tasks_completed
     tasks.select { |task| task.completed? }.count
   end
-
-  def total_tasks
-    tasks.count
-  end
-
-  def total_journal
-    category.count
-  end
 end
