@@ -11,7 +11,7 @@
           </a>
           <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser">
             <li><%= link_to 'New Journal', new_category_path, :class => 'dropdown-item', "data-bs-toggle" => "modal", "data-bs-target" => "#exampleModal", :remote => true %></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
           </ul>
