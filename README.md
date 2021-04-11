@@ -1,24 +1,11 @@
-# README
+# Keeps
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+💾 You can preview it here: [Keeps Journal App](https://keeps-journal.herokuapp.com/)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby on Rails Project using Devise for authentication and Bootstrap for styling
+<br>
+<br>
+<img src="https://github.com/lyndoncortez/keeps/blob/main/README_pictures/d.png?raw=true">
+<img src="https://github.com/lyndoncortez/keeps/blob/main/README_pictures/c.png?raw=true">
+<img src="https://github.com/lyndoncortez/keeps/blob/main/README_pictures/b.png?raw=true">
+<img src="https://github.com/lyndoncortez/keeps/blob/main/README_pictures/a.png?raw=true">
