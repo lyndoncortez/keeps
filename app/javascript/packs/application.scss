@@ -87,7 +87,7 @@ a {
 
 .alert-fixed {
   position: fixed;
-  right: 40%;
+  right: 42%;
   z-index: 9999;
 }
 
@@ -98,4 +98,14 @@ a {
   overflow: hidden;
   position: absolute;
   z-index: -1;
+}
+
+@media only screen and (max-width: 700px) {
+  .hero-img {
+    display: none;
+  }
+
+  .alert-fixed {
+    right: 24%;
+  }
 }

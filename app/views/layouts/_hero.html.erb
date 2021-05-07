@@ -1,19 +1,14 @@
 <div class="w-75 mx-auto">
-  <div class="row p-4 p-md-5 mb-4 text-white rounded bg-dark align-items-center">
-    <div class="col-md-6 hero-text">
+  <div class="row p-2 p-md-5 mb-4 text-white rounded bg-dark text-center">
+    <div class="col-md-6 col-sm-12 hero-text">
       <h1 class="display-4 fst-italic">
         All your tasks, <br>
         in one place.
       </h1>
-      <p class="lead my-3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <%= link_to "Log in", "/users/sign_in", class: "btn btn-primary my-3" %><br />
     </div>
-    <div class="col-md-6 order-md-last justify-content-center">
-      <div class="d-grid gap-4 col-6 mx-auto">
-        
-        <%= link_to "Log in", "/users/sign_in", class: "btn btn-primary" %><br />
-      </div>
+    <div class="col-md-6 col-sm-12 hero-img">
+        <img src=<%=asset_path("blogging.gif")%> height="280"/>
     </div>
   </div>
 </div>
