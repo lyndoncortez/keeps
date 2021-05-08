@@ -3,7 +3,7 @@
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="form-inputs">
-      <div class="mb-4 justify-content-center w-25 mx-auto">
+      <div class="mb-4 justify-content-center w-25 mx-auto input-width">
         <%= f.input :email,
                     required: true,
                     autofocus: true,
@@ -11,7 +11,7 @@
                     label: false,
                     input_html: { autocomplete: "email" }%>
       </div>
-      <div class="mb-4 justify-content-center  w-25 mx-auto">
+      <div class="mb-4 justify-content-center w-25 mx-auto input-width">
         <%= f.input :password,
                     required: true,
                     placeholder: 'Password',
@@ -19,7 +19,7 @@
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" } %>
       </div>
-      <div class="mb-4 justify-content-center  w-25 mx-auto">
+      <div class="mb-4 justify-content-center w-25 mx-auto input-width">
         <%= f.input :password_confirmation,
                     required: true,
                     placeholder: 'Confirm Password',
