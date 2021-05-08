@@ -5,7 +5,7 @@
   <div class="card text-center w-75 mx-auto bg-dark border-dark mt-5">
     <div class="card-body text-secondary">
       <img src=<%=asset_path("empty.svg")%>/>
-      <h5 class="card-title">Dude, you don't have any Journal!</h5>
+      <h5 class="card-title">You don't have any Journal.</h5>
       <h6 class="card-text"><%= link_to new_category_path, "data-bs-toggle" => "modal", "data-bs-target" => "#exampleModal", :remote => true do %>
         <i class="fas fa-plus text-primary"></i> Create one.
       <% end %></h6>

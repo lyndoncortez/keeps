@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title>Keeps</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -18,7 +18,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     <% end %>
-    <div class="container">
+    <div class="container d-flex h-100 p-3 flex-column">
       <%= render 'layouts/header' %>
       <% if user_signed_in? %>  
         <%= yield %>
